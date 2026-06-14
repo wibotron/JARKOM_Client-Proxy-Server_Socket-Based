@@ -73,6 +73,7 @@ def read_cache(url_path):
         return f.read()
 
 def write_cache(url_path, data):
+    os.makedirs(CACHE_DIR, exist_ok=True)
     with open(url_to_cache_path(url_path), "wb") as f:
         f.write(data)
 
