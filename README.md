@@ -48,7 +48,15 @@ JARKOM_Client-Proxy-Server_Socket-Based/
 ---
 
 ## Cara Menjalankan
-
+- ketik disemua laptop "ipconfig" -> Buat ngecek IP address laptop
+- bagian web server ketik "python webserver.py --root ../test" -> Nyalain web server
+- python proxy.py --server-host [IP_WEBSERVER] -> Nyalain proxy server, diarahkan ke IP laptop webserver biar bisa forward request kesana
+- python client.py -url /index.html -proxy-host [IP proxy] -proxy-udp-host [IP proxy]
+- python client.py -mode udp -proxy-udp-host [IP_PROXY] -> Tes mode UDP, ngirim paket QoS ke proxy buat ukur RTT, packet loss, jitter, throughput
+- python client.py -multi -proxy-host [IP_PROXY] -> Tes multi-client, simulasi 5 client ngirim request bersamaan
+  Tes Error 502
+- webserver putus hubungan dengan proxy
+- python client.py -url /index.html -proxy-host [IP_PROXY] -proxy-udp-host [IP_PROXY]
 > **Urutan penting:** Web Server → Proxy Server → Client
 
 ### 1. Menjalankan Web Server
