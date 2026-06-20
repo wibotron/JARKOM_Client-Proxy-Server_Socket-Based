@@ -56,7 +56,8 @@ JARKOM_Client-Proxy-Server_Socket-Based/
 - python client.py -multi -proxy-host [IP_PROXY] -> Tes multi-client, simulasi 5 client ngirim request bersamaan
   Tes Error 502
 - webserver putus hubungan dengan proxy
-- python client.py -url /index.html -proxy-host [IP_PROXY] -proxy-udp-host [IP_PROXY]
+- python client.py -url /index.html -proxy-host [IP_PROXY] -proxy-udp-host [IP_PROXY] -> Jalanin request TCP
+- python client.py -url /osi.html -proxy-host [IP_PROXY] -proxy-udp-host [IP_PROXY] -> kalo misal osi.html
 > **Urutan penting:** Web Server → Proxy Server → Client
 
 ### 1. Menjalankan Web Server
